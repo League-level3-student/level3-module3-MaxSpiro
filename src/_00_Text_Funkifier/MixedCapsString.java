@@ -8,8 +8,23 @@ public class MixedCapsString extends SpecialString{
 
 	@Override
 	public String funkifyText(String s) {
-		
-		return "";
+		char[] c = s.toCharArray();
+		s="";
+		for(int i=0;i<c.length;i++) {
+			if(c[i]<=90 && c[i]!=32) {
+				c[i]+=32;
+			}
+		}
+		for(int i=0;i<c.length;i++) {
+			if(i%2!=0) {
+				if(c[i]!=32)
+					c[i]-=32;
+			}
+		}
+		for(int i=0;i<c.length;i++) {
+			s+=c[i];
+		}
+		return s;
 	}
 
 }
